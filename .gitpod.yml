@@ -1,0 +1,16 @@
+image: gitpod/workspace-full-vnc
+
+tasks:
+  - init: ./_install.sh  
+    command: cd tauri-next && npm run tauri dev
+    name: tauri-dev
+  # - init: pip install open-interpreter
+  #   command: interpreter
+  #   name: interpreter
+
+ports:
+  - name: VNC
+    description: VNC over HTTP 
+    port: 6080
+    onOpen: open-browser
+    visibility: public
